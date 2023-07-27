@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
         <link rel="stylesheet" href="./assets/css/base.css">
         <link rel="stylesheet" href="./assets/css/main.css">
+        <link rel="stylesheet" href="./assets/css/grid.css">
+        <link rel="stylesheet" href="./assets/css/reponsive.css">
         <link rel="stylesheet" href="./assets/fonts/fontawesome-6.4.0/css/all.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=vietnamese">
         <title>F8_Shop</title>
@@ -14,8 +16,8 @@
         <!-- Blook Element Modifier -->
         <div class="app">
             <header class="header">
-                <div class="grid">   
-                    <nav class="header__navbar">
+                <div class="grid wide">   
+                    <nav class="header__navbar hide-on-mobile-tablet">
                         <ul class="header__navbar-list">
                             <li class="header__navbar-item header__navbar-item--hasqr header__navbar-item--separate">
                                 Vào cửa hàng trên ứng dụng F8-Shop
@@ -141,11 +143,17 @@
                                 </ul>
                             </li>
                         </ul>
-                    </nav>
+                    </nav>                    
 
                     <!-- Header with search -->
                     <div class="header-with-search">
-                        <div class="header__logo">
+                        <label for="mobile-menu-checkbox" class="header__mobile-menu">
+                            <i class="header__mobile-menu--icon fa-solid fa-bars"></i>
+                        </label>
+
+                        <input type="checkbox" hidden id="mobile-menu-checkbox" class="header__menu-checkbox">
+
+                        <div class="header__logo hide-on-tablet">
                             <a href="/Html/F8_Shop/" class="header__logo-link">
                                 <svg viewBox="0 0 192 65" class="header__logo-img">
                                     <g fill-rule="evenodd">
@@ -156,7 +164,7 @@
                                     </g>
                                 </svg>
                             </a>
-                        </div>
+                        </div>                        
 
                         <div class="header__search">
                             <div class="header__search-input-wrap">
@@ -228,6 +236,9 @@
                                                 <div class="header__cart-item--body">
                                                     <span class="header__cart-item--des">Phân loại: Cao cấp</span>
                                                     <span class="header__cart-item--del">Xóa</span>
+                                                    <button class="btn btn-primary header__cart-item-btn">
+                                                        <i class="fa-solid fa-x"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </li>                                       
@@ -245,6 +256,9 @@
                                                 <div class="header__cart-item--body">
                                                     <span class="header__cart-item--des">Phân loại: Bạc</span>
                                                     <span class="header__cart-item--del">Xóa</span>
+                                                    <button class="btn btn-primary header__cart-item-btn">
+                                                        <i class="fa-solid fa-x"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </li>
@@ -262,6 +276,9 @@
                                                 <div class="header__cart-item--body">
                                                     <span class="header__cart-item--des">Phân loại: Bạc</span>
                                                     <span class="header__cart-item--del">Xóa</span>
+                                                    <button class="btn btn-primary header__cart-item-btn">
+                                                        <i class="fa-solid fa-x"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </li>
@@ -273,12 +290,15 @@
                                                     <div class="header__cart-item-price-wrap">
                                                         <span class="header__cart-item--price">14.400.000đ</span>
                                                         <span class="header__cart-item--multiply">*</span>
-                                                        <span class="header__cart-item--qnt">1</span>
+                                                        <span class="header__cart-item--qnt">1</span>                                                        
                                                     </div>
                                                 </div>
                                                 <div class="header__cart-item--body">
                                                     <span class="header__cart-item--des">Phân loại: Cao cấp</span>
                                                     <span class="header__cart-item--del">Xóa</span>
+                                                    <button class="btn btn-primary header__cart-item-btn">
+                                                        <i class="fa-solid fa-x"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </li>                                       
@@ -296,6 +316,9 @@
                                                 <div class="header__cart-item--body">
                                                     <span class="header__cart-item--des">Phân loại: Bạc</span>
                                                     <span class="header__cart-item--del">Xóa</span>
+                                                    <button class="btn btn-primary header__cart-item-btn">
+                                                        <i class="fa-solid fa-x"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </li>
@@ -313,6 +336,9 @@
                                                 <div class="header__cart-item--body">
                                                     <span class="header__cart-item--des">Phân loại: Bạc</span>
                                                     <span class="header__cart-item--del">Xóa</span>
+                                                    <button class="btn btn-primary header__cart-item-btn">
+                                                        <i class="fa-solid fa-x"></i>
+                                                    </button>
                                                 </div>
                                             </div>
                                         </li>
@@ -322,14 +348,55 @@
                                 </div>
                             </div>
                         </div>
+
+                        <label for="mobile-menu-checkbox" class="header__menu-overplay"></label>
+
+                        <nav class="header__mob-nav">
+                            <div class="header__user-info">
+                                <img src="https://fullstack.edu.vn/static/media/fallback-avatar.155cdb2376c5d99ea151.jpg" alt="" class="header__user-info--img">
+                                <span class="header__user-info--name">Quách Hải Băng</span>                        
+                            </div>
+                            <label for="mobile-menu-checkbox" class="header__mob-close">
+                                <i class="fa-solid fa-xmark"></i>
+                            </label>
+                            <ul class="header__mobile-list">
+                                <li class="header__mobile-list-item">
+                                    <a href="#" class="header__mobile-list-link">Thông tin cá nhân</a>
+                                </li>
+                                <li class="header__mobile-list-item">
+                                    <a href="#" class="header__mobile-list-link">Giỏ hàng</a>
+                                </li>
+                                <li class="header__mobile-list-item">
+                                    <a href="#" class="header__mobile-list-link">Liên hệ với chúng tôi</a>
+                                </li>
+                                <li class="header__mobile-list-item">
+                                    <a href="#" class="header__mobile-list-link header__mobile-list-logout">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
+
+                <ul class="header__sort-bar">
+                    <i class="header__sort-item">
+                        <a href="#" class="header__sort-link">Liên quan</a>
+                    </i>
+                    <i class="header__sort-item header__sort-item__active">
+                        <a href="#" class="header__sort-link">Mới nhất</a>
+                    </i>
+                    <i class="header__sort-item">
+                        <a href="#" class="header__sort-link">Bán chạy</a>
+                    </i>
+                    <i class="header__sort-item">
+                        <a href="#" class="header__sort-link">Giá</a>
+                    </i>
+                </ul>
             </header>
 
             <div class="container">
-                <div class="grid">
-                    <div class="grid__row app__content">
-                        <div class="grid__col-2">
+                <div class="grid wide">
+                    <div class="row sm-gutter app__content">
+                        <div class="col l-2 m-0 c-0">
                             <nav class="category">
                                 <h3 class="category__heading">
                                     Danh mục
@@ -356,8 +423,8 @@
                             </nav>
                         </div>
     
-                        <div class="grid__col-10">
-                            <div class="home-filter">
+                        <div class="col l-10 m-12 c-12">
+                            <div class="home-filter hide-on-mobile-tablet">
                                 <span class="home-filter__label">Sắp xếp theo</span>
                                 <button class="home-filter__btn btn">Phổ biến</button>
                                 <button class="home-filter__btn btn btn--active">Mới nhất</button>
@@ -391,10 +458,45 @@
                                 </div>
                             </div>
 
+                            <nav class="mob-category">
+                                <ul class="mob-category__list">
+                                    <li class="mob-category__item">
+                                        <a href="" class="mob-category__link">Son môi</a>
+                                    </li>
+                                    <li class="mob-category__item">
+                                        <a href="" class="mob-category__link">Kem nền</a>
+                                    </li>
+                                    <li class="mob-category__item">
+                                        <a href="" class="mob-category__link">Kem lót</a>
+                                    </li>
+                                    <li class="mob-category__item">
+                                        <a href="" class="mob-category__link">Phấn phủ</a>
+                                    </li>
+                                    <li class="mob-category__item">
+                                        <a href="" class="mob-category__link">Dụng cụ trang điểmDụng cụ trang điểmDụng cụ trang điểm</a>
+                                    </li>
+                                    <li class="mob-category__item">
+                                        <a href="" class="mob-category__link">Nước tẩy trang</a>
+                                    </li>
+                                    <li class="mob-category__item">
+                                        <a href="" class="mob-category__link">Dụng cụ tẩy trang</a>
+                                    </li>
+                                    <li class="mob-category__item">
+                                        <a href="" class="mob-category__link">Kem chống nắng</a>
+                                    </li>
+                                    <li class="mob-category__item">
+                                        <a href="" class="mob-category__link">Bộ chăm sóc dưỡng da</a>
+                                    </li>
+                                    <li class="mob-category__item">
+                                        <a href="" class="mob-category__link">Thực phẩm chức năng</a>
+                                    </li>
+                                </ul>
+                            </nav>
+
                             <div class="home-product">
-                                <div class="grid__row">
+                                <div class="row sm-gutter">
                                     <!-- Product item -->
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/2023/05/06/1683363870_xoY8SdO5Isr9ylLZ_1683365541-phpch1vbz.png)"></div>
                                             <h4 class="home-product__name">Bộ dưỡng tái tạo năng lượng Sum37 Secret Special set</h4>
@@ -431,7 +533,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/2022/09/22/1663857773_kjQU5nDoCE4heW8M_1663860627-phpjzpezo.png)"></div>
                                             <h4 class="home-product__name">Set Sum vàng tái sinh Losec- Suma</h4>
@@ -468,7 +570,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/83-1591783524-myphamohui-lgvina.png)"></div>
                                             <h4 class="home-product__name">Tẩy Trang Whoo Vital Hydrating Cleasing Water</h4>
@@ -505,7 +607,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/83-1580794419-myphamohui-lgvina.png)"></div>
                                             <h4 class="home-product__name">Set Sum vàng tái sinh Losec- Suma</h4>
@@ -542,7 +644,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/83-1633964896-myphamohui-lgvina.png)"></div>
                                             <h4 class="home-product__name">Bộ Dưỡng Tái Tạo Trẻ Hóa Da Ohui The First Geniture 7pcs Phiên Bản Mới</h4>
@@ -579,7 +681,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/83-1638248752-myphamohui-lgvina.png)"></div>
                                             <h4 class="home-product__name">Son Ohui The First bản mini (màu đỏ thuần)</h4>
@@ -616,7 +718,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/2023/07/14/1689327393_RCHDBG6JYjPOMz5W_1689337124-phpqefqxp.png)"></div>
                                             <h4 class="home-product__name">Kem chống nắng cấp ẩm Su:m37 Sun Away Cooling Watery SunBlock Ex SPF50+/PA+++</h4>
@@ -653,7 +755,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/2022/09/25/1664100006_HqsjZRYyuOnPhVD6_1664107845-php8fcbft.png)"></div>
                                             <h4 class="home-product__name">Set tinh chất Vitamin Complex 8.0% Ohui The First Geniture Genummune Ampoule</h4>
@@ -690,7 +792,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/2022/09/25/1664100527_3EHh9UXGL2jZAOKo_1664105957-php2defcq.png)"></div>
                                             <h4 class="home-product__name">Set Nước Thần Ohui The First Geniture Cell Essential Source 200ml 4sp</h4>
@@ -727,7 +829,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/2022/09/25/1664080372_5CUQ8pRqE6c1rdkv_1664081054-phpphhpbj.png)"></div>
                                             <h4 class="home-product__name">Set whoo đỏ Jinyulhyang Anti Aging đặc trị nếp nhăn</h4>
@@ -764,7 +866,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/2022/10/02/1664701905_JwB6dofxtElL9b5C_1664709839-phpsakry9.png)"></div>
                                             <h4 class="home-product__name">Bộ dưỡng tái sinh da Whoo Cheongidan Radiant Special 7sp</h4>
@@ -801,7 +903,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/2022/09/25/1664097240_LGstCOYPua8bQp5H_1664104558-phpbyucki.png)"></div>
                                             <h4 class="home-product__name">Set dưỡng whoo vàng Inyang Dưỡng ẩm, chống lão hóa và săn chắc da</h4>
@@ -838,7 +940,7 @@
                                             </div>
                                         </a>
                                     </div>                                                                          
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/2022/10/02/1664704141_4MgpL6jnIiAckPvw_1664705236-php684gqz.png)"></div>
                                             <h4 class="home-product__name">Bộ sản phẩm Tái sinh da cao cấp Whoo Cheongidan Hwa Hyun  2 tầng</h4>
@@ -875,7 +977,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/83-1574863372-myphamohui-lgvina.png)"></div>
                                             <h4 class="home-product__name">Sữa rửa mặt Ohui dưỡng ẩm Miracle moisture cleansing Foam 80ml</h4>
@@ -912,7 +1014,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/83-1574919747-myphamohui-lgvina.png)"></div>
                                             <h4 class="home-product__name">Set Ohui Xanh mini PRIME ADVANCER 5 món</h4>
@@ -949,7 +1051,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/2022/09/25/1664098640_b8SERrwzZjtC6ldL_1664101884-phpvzxhmk.png)"></div>
                                             <h4 class="home-product__name">Set trang điểm Gongjinhyang Mi Velvet</h4>
@@ -986,7 +1088,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/2022/11/09/1667983721_EauqM6GjiITbmXz4_1667988685-php9j3zri.png)"></div>
                                             <h4 class="home-product__name">Phấn phủ Ohui The First Geniture Powder Pact Special Set SPF30/PA++</h4>
@@ -1023,7 +1125,7 @@
                                             </div>
                                         </a>
                                     </div>                                                                          
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/83-1576135159-myphamohui-lgvina.png)"></div>
                                             <h4 class="home-product__name">Tinh chất hoàn lưu cao 7ml</h4>
@@ -1060,7 +1162,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/83-1611904589-myphamohui-lgvina.png)"></div>
                                             <h4 class="home-product__name">Set dưỡng da Hoàn Lưu Cao mini Phục hồi và trẻ hóa làn da</h4>
@@ -1097,7 +1199,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class="grid__col-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="#" class="home-product-item">
                                             <div class="home-product-item__img" style="background-image: url(https://cdn.abphotos.link/photos/resized/1024x/1653707490-php6e9kqr.png)"></div>
                                             <h4 class="home-product__name">Bộ dưỡng trắng và ngừa lão hóa Whoo Cheongidan Illuminating Refining Essence set 4pcs</h4>
@@ -1154,9 +1256,6 @@
                                     <a href="#" class="pagination-item__link">3</a>
                                 </li>
                                 <li class="pagination-item">
-                                    <a href="#" class="pagination-item__link">4</a>
-                                </li>
-                                <li class="pagination-item">
                                     <a href="#" class="pagination-item__link">...</a>
                                 </li>
                                 <li class="pagination-item">
@@ -1174,9 +1273,9 @@
             </div>
 
             <footer class="footer">
-                <div class="grid">
-                    <div class="grid__row">
-                        <div class="grid__col-2-4">
+                <div class="grid wide footer__content">
+                    <div class="row">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">Chăm sóc khách hành</h3>
                             <ul class="footer__list">
                                 <li class="footer__list-item">
@@ -1190,7 +1289,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="grid__col-2-4">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">Giới thiệu</h3>
                             <ul class="footer__list">
                                 <li class="footer__list-item">
@@ -1204,7 +1303,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="grid__col-2-4">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">Danh mục</h3>
                             <ul class="footer__list">
                                 <li class="footer__list-item">
@@ -1224,7 +1323,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="grid__col-2-4">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">Theo dõi</h3>
                             <ul class="footer__list">
                                 <li class="footer__list-item">
@@ -1247,7 +1346,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="grid__col-2-4">
+                        <div class="col l-2-4 m-8 c-12">
                             <h3 class="footer__heading">Tải ứng dụng</h3>
                             <div class="footer__download">
                                 <img src="./assets/img/QR_code.png" alt="Download QR" class="footer__download-qr">
@@ -1264,7 +1363,7 @@
                     </div>
                 </div>
                 <div class="footer__bottom">
-                    <div class="grid">
+                    <div class="grid wide">
                         <p class="footer__text">
                             © 2023 Bản quyền thuộc về cá nhân Quách Hải Băng - Website được xây dựng với mục đính học tập 
                         </p>
